@@ -23,7 +23,11 @@ client_connection, client_address = server_socket.accept()
 
 # Print message from client
 msg = client_connection.recv(1024).decode()
-print('Client_Connection Received:', msg)
+for v in functions.values():
+    v["x"] = 2
+    v["y"] = 2
+val = add(v["x"], v["y"])
+print('Client_Connection Received:', val)
 
 """
 while True:
