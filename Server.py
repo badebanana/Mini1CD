@@ -5,7 +5,6 @@
 
 import socket
 
-from Functions import *
 
 # Define socket host and port
 SERVER_HOST = '0.0.0.0'
@@ -23,11 +22,7 @@ client_connection, client_address = server_socket.accept()
 
 # Print message from client
 msg = client_connection.recv(1024).decode()
-for v in functions.values():
-    v["x"] = 2
-    v["y"] = 2
-val = add(v["x"], v["y"])
-print('Client_Connection Received:', val)
+print('Client_Connection Received:', msg)
 
 """
 while True:
