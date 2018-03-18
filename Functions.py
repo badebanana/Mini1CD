@@ -1,3 +1,9 @@
+functions = {
+    "Add": {"x": 0, "y": 0},
+    "Sub": {"x": 0, "y": 0},
+    "Mul": {"x": 0, "y": 0},
+}
+
 def add(x,y):
     return x + y
 
