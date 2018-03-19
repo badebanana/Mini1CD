@@ -5,6 +5,8 @@
 
 import socket
 
+import json
+
 # Define socket host and port
 SERVER_HOST = '127.0.0.1'
 SERVER_PORT = 8000
@@ -17,17 +19,14 @@ client_socket.connect((SERVER_HOST, SERVER_PORT))
 
 # Send message
 msg = input("> ")
-client_socket.send(msg.encode())
 
-#client_socket.sendall("“Hello from the client application!".encode())
-"""
-while True:
-    msg = input("> ")
-    client_socket.send(msg.encode())
-    if msg == "exit":
-        break
-    msgServer = client_socket.recv(1024).decode()
-    print('Client_Socket Received:', msgServer)
-"""
+file_json = {
+    "id": 0,
+    "method": msg[0:3],
+    "jsonrpc": "2.0",
+    "params": {"x":msg[3], "y":msg[4]},
+}
+client_socket.send(json.dumps(file_json).encode())
+
 # Close socket
 client_socket.close()

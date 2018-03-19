@@ -1,11 +1,14 @@
-from Server import *
 
 functions = {
     "Add": {"x": 0, "y": 0},
-    "Sub": {"x": 0, "y": 0},
-    "Mul": {"x": 0, "y": 0},
 }
-def validarNumeroElementos(a)
+
+def add(x, y):
+    return x + y
+
+
+"""
+def validarNumeroElementos(a):
     if len(a) <= 1:
         print('Tem que se')
         return
@@ -45,3 +48,4 @@ for k,v in functions.items():
             i["x"] = 2
             i["y"] = 2
     msg = add(v["x"], v["y"])
+"""

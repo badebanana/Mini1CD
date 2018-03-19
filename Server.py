@@ -5,6 +5,9 @@
 
 import socket
 
+import json
+
+from Functions import*
 
 # Define socket host and port
 SERVER_HOST = '0.0.0.0'
@@ -20,27 +23,17 @@ print('Listening on port %s ...' % SERVER_PORT)
 # Wait for client connections
 client_connection, client_address = server_socket.accept()
 
-# Print message from client
 msg = client_connection.recv(1024).decode()
-print('Client_Connection Received:', msg)
+dic = json.loads(msg)
 
-"""
-while True:
-    # Wait for client connections
-    client_connection, client_address = server_socket.accept()
-    while True:
-        # Print message from client
-        msg = client_connection.recv(1024).decode()
-        if msg == "exit":
-            break
-        try:
-            evalmsg = str(eval(msg))
-            print(msg, '=', evalmsg)
-            print('Client_Connection Received:', msg)
-            client_connection.send(msg.encode())
-        except:
-            client_connection.send("Tá mal".encode())
-"""
+for k,v in functions.items():
+    if dic['method'].upper() == k.upper():
+        val = add(int(dic['params']['x']), int(dic['params']['y']))
+print(val)
+
+# Print message from client
+#print('Client_Connection Received:', msg)
+
 # Close client connection
 client_connection.close()
 
