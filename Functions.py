@@ -36,6 +36,7 @@ def sub(a):
         return
 
 
+
 def mul(a):
     x = 1
     if hasElements(a) == True:
