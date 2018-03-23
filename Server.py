@@ -26,10 +26,13 @@ client_connection, client_address = server_socket.accept()
 msg = client_connection.recv(1024).decode()
 dic = json.loads(msg)
 
-for k,v in functions.items():
-    if dic['method'].upper() == k.upper():
-        val = add(int(dic['params']['x']), int(dic['params']['y']))
-print(val)
+val = []
+for i in functions:
+    if dic['method'].upper() == i.upper():
+        val.append(int(dic['params']['x']))
+        val.append(int(dic['params']['y']))
+        print(val)
+print(add(val))
 
 # Print message from client
 #print('Client_Connection Received:', msg)
