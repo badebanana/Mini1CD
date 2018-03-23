@@ -1,10 +1,4 @@
-from builtins import print
-
 functions = []
-
-def add(x, y):
-    return x + y
-
 
 def addToList(element):
     if element != "" and element != " ":
@@ -17,30 +11,46 @@ def addToList(element):
     print(functions)
 
 
-def validarNumeroElementos(a):
+def hasElements(a):
     if len(a) <= 1:
-        print('Tem que se')
-        return
+        print('Tem que ter no minimo 2 números')
+        return False
+    return True
 
 def add(a):
     x = 0
-    validarNumeroElementos(a)
-    for i in a:
-        x + i
-    return x
+    if hasElements(a) == True:
+        for i in a:
+            x += i
+        return x
+    else:
+        return None
 
 def sub(a):
     x = 0
-    for i in a:
-        x - i
-    return x
+    if hasElements(a) == True:
+        for i in a:
+            x -= i
+        return x
+    else:
+        return
+
 
 def mul(a):
     x = 1
-    for i in a:
-        x * i
-    return x
+    if hasElements(a) == True:
+        for i in a:
+            x *= i
+        return x
+    else:
+        return
 
+a = [1,2,3]
+print("Método add da lista [", a ,"] dá: ", add(a))
+print("Método sub da lista [", a ,"] dá: ", sub(a))
+print("Método mul da lista [", a ,"] dá: ", mul(a))
+
+"""
 def div(a):
     x = 1
     for i in a:
@@ -49,4 +59,4 @@ def div(a):
         if i != 0:
             x / i
     return x
-
+"""
