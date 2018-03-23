@@ -31,7 +31,6 @@ for i in functions:
     if dic['method'].upper() == i.upper():
         val.append(int(dic['params']['x']))
         val.append(int(dic['params']['y']))
-        print(val)
 print(add(val))
 
 # Print message from client
