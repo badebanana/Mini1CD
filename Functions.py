@@ -10,7 +10,6 @@ def addToList(element):
         print('O elemento não pode ser null')
     print(functions)
 
-
 def hasElements(a):
     if len(a) <= 1:
         print('Tem que ter no minimo 2 números')
@@ -50,6 +49,9 @@ a = [1,2,3]
 print("Método add da lista [", a ,"] dá: ", add(a))
 print("Método sub da lista [", a ,"] dá: ", sub(a))
 print("Método mul da lista [", a ,"] dá: ", mul(a))
+
+addToList('add')
+addToList('mul')
 
 """
 def div(a):
