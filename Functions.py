@@ -8,7 +8,7 @@ def addToList(element):
             print('Esta função já existe no array')
     else:
         print('O elemento não pode ser null')
-    print(functions)
+    print('Funcções existentes: ',functions)
 
 def hasElements(a):
     if len(a) <= 1:
@@ -34,7 +34,9 @@ def sub(a):
     else:
         return
 
+a = [1,2,3]
 
+print("Método sub da lista [", a ,"] dá: ", sub(a))
 
 def mul(a):
     x = 1
@@ -44,11 +46,6 @@ def mul(a):
         return x
     else:
         return
-
-a = [1,2,3]
-print("Método add da lista [", a ,"] dá: ", add(a))
-print("Método sub da lista [", a ,"] dá: ", sub(a))
-print("Método mul da lista [", a ,"] dá: ", mul(a))
 
 addToList('add')
 addToList('mul')
