@@ -1,19 +1,22 @@
+from builtins import print
 
-functions = ['add']
+functions = []
 
 def add(x, y):
     return x + y
 
 
-def addList(element):
-    for i in functions:
-        if i == None:
-            functions[i].append(element);
+def addToList(element):
+    if element != "" and element != " ":
+        if element not in functions:
+            functions.append(element);
+        else:
+            print('Esta função já existe no array')
+    else:
+        print('O elemento não pode ser null')
     print(functions)
 
-print('Lista',addList(5))
 
-"""
 def validarNumeroElementos(a):
     if len(a) <= 1:
         print('Tem que se')
@@ -47,11 +50,3 @@ def div(a):
             x / i
     return x
 
-
-for k,v in functions.items():
-    if msg.upper() == k.upper():
-        for i in functions.values():
-            i["x"] = 2
-            i["y"] = 2
-    msg = add(v["x"], v["y"])
-"""
