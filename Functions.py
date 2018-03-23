@@ -10,7 +10,6 @@ def addToList(element):
         print('O elemento não pode ser null')
     print(functions)
 
-addToList('add')
 
 def hasElements(a):
     if len(a) <= 1:
