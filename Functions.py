@@ -53,6 +53,7 @@ print("Método mul da lista [", a ,"] dá: ", mul(a))
 addToList('add')
 addToList('mul')
 
+
 """
 def div(a):
     x = 1
