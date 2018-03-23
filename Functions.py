@@ -1,10 +1,4 @@
-from builtins import print
-
 functions = []
-
-def add(x, y):
-    return x + y
-
 
 def addToList(element):
     if element != "" and element != " ":
@@ -16,6 +10,7 @@ def addToList(element):
         print('O elemento não pode ser null')
     print(functions)
 
+addToList('add')
 
 def validarNumeroElementos(a):
     if len(a) <= 1:
