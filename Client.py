@@ -1,8 +1,3 @@
-"""
- Implements a simple socket client
-
-"""
-
 import socket
 
 import json

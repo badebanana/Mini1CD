@@ -1,11 +1,17 @@
 
-functions = {
-    "Add": {"x": 0, "y": 0},
-}
+functions = ['add']
 
 def add(x, y):
     return x + y
 
+
+def addList(element):
+    for i in functions:
+        if i == None:
+            functions[i].append(element);
+    print(functions)
+
+print('Lista',addList(5))
 
 """
 def validarNumeroElementos(a):
