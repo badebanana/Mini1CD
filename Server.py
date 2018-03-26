@@ -27,14 +27,14 @@ msg = client_connection.recv(1024).decode()
 dic = json.loads(msg)
 
 val = []
-for i in functions:
-    if dic['method'].upper() == i.upper():
+for k,v in functions.items():
+    if dic['method'].lower() == k:
         val.append(int(dic['params']['x']))
         val.append(int(dic['params']['y']))
-print(add(val))
+        print(v(val))
+print('A função não existe')
 
-# Print message from client
-#print('Client_Connection Received:', msg)
+
 
 # Close client connection
 client_connection.close()

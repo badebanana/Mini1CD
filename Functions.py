@@ -1,5 +1,5 @@
-functions = []
 
+#ALTERAR METODO PARA DICIONARIO EM VEZZ DE LISTA
 def addToList(element):
     if element != "" and element != " ":
         if element not in functions:
@@ -38,6 +38,11 @@ a = [1,2,3]
 
 print("Método sub da lista [", a ,"] dá: ", sub(a))
 
+
+functions = {
+    'add': add,
+    'sub': sub
+}
 def mul(a):
     x = 1
     if hasElements(a) == True:
@@ -46,9 +51,6 @@ def mul(a):
         return x
     else:
         return
-
-addToList('add')
-addToList('mul')
 
 
 """
