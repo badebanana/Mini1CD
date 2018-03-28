@@ -29,10 +29,9 @@ dic = json.loads(msg)
 val = []
 for k,v in functions.items():
     if dic['method'].lower() == k:
-        val.append(int(dic['params']['x']))
-        val.append(int(dic['params']['y']))
+        for i,j in dic['params'].items():
+            val.append(int(j))
         print(v(val))
-print('A função não existe')
 
 
 

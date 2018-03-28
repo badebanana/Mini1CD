@@ -2,6 +2,8 @@ import socket
 
 import json
 
+from User import*
+
 # Define socket host and port
 SERVER_HOST = '127.0.0.1'
 SERVER_PORT = 8000
@@ -13,14 +15,8 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
 # Send message
-msg = input("> ")
-
-file_json = {
-    "id": 0,
-    "method": msg[0:3],
-    "jsonrpc": "2.0",
-    "params": {"x":msg[3], "y":msg[4]},
-}
+msg = msgUser()
+file_json = fileJson(msg)
 client_socket.send(json.dumps(file_json).encode())
 
 # Close socket
