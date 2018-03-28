@@ -1,4 +1,3 @@
-num = 0
 def msgUser():
     print('Escreva a função no seguinte formato:    nomeFunção,valor1,valor2,...')
     msg = input("> ")
@@ -8,7 +7,7 @@ def msgUser():
 def fileJson(msg):
     file_json = \
         {
-        "id": num,
+        "id": 0,
         "method": msg[0],
         "jsonrpc": "2.0",
         }
