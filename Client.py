@@ -1,7 +1,5 @@
 import socket
-
 import json
-
 from User import*
 
 # Define socket host and port

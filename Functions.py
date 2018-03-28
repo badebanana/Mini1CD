@@ -9,7 +9,6 @@ def addToDictionary(fuctionKey, functionValue):
                 print('Esta função já existe no array')
     else:
         print('O elemento não pode ser null')
-    #print('Funcções existentes: ',functions)
 
 
 def hasElements(a):
