@@ -1,14 +1,18 @@
+functions = []
 
 #ALTERAR METODO PARA DICIONARIO EM VEZZ DE LISTA
-def addToList(element):
-    if element != "" and element != " ":
-        if element not in functions:
-            functions.append(element);
-        else:
-            print('Esta função já existe no array')
+
+def addToDictionary(fuctionKey, functionValue):
+    if fuctionKey != "" and fuctionKey != " ":
+        if functionValue != "" and functionValue != " ":
+            if fuctionKey not in functions and functionValue not in functions:
+                functions[fuctionKey] = functionValue
+            else:
+                print('Esta função já existe no array')
     else:
         print('O elemento não pode ser null')
     print('Funcções existentes: ',functions)
+
 
 def hasElements(a):
     if len(a) <= 1:
@@ -38,11 +42,6 @@ a = [1,2,3]
 
 print("Método sub da lista [", a ,"] dá: ", sub(a))
 
-
-functions = {
-    'add': add,
-    'sub': sub
-}
 def mul(a):
     x = 1
     if hasElements(a) == True:
@@ -53,13 +52,19 @@ def mul(a):
         return
 
 
-"""
 def div(a):
-    x = 1
-    for i in a:
-        if i == 0:
-            print('Escolha nuúmeros que sejam diferentes de 0')
-        if i != 0:
-            x / i
-    return x
-"""
+    if len(a) == 2:
+        return a[0] / a[1]
+    else:
+        print("Apenas pode dividir dois números.")
+
+
+functions = {
+    'add': add,
+    'sub': sub,
+}
+
+addToDictionary('div', div)
+addToDictionary('mul', mul)
+
+print('Funções existentes: ', functions)
