@@ -64,4 +64,13 @@ def calcula(dicionario):
         if dicionario['method'].lower() == k:
             for i,j in dicionario['params'].items():
                 val.append(int(j))
-            print(v(val))
+            return (v(val))
+
+def fileJson(msg):
+    file_json = \
+        {
+            "id": 0,
+            "jsonrpc": "2.0",
+            "result": msg,
+        }
+    return file_json

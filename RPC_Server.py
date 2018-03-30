@@ -7,7 +7,7 @@ import socket
 
 import json
 
-from Functions import*
+from ServerTest import*
 
 # Define socket host and port
 SERVER_HOST = '0.0.0.0'
@@ -27,6 +27,8 @@ msg = client_connection.recv(1024).decode()
 dic = json.loads(msg)
 
 val = calcula(dic)
+file_json = fileJson(val)
+client_connection.send(json.dumps(file_json).encode())
 
 # Close client connection
 client_connection.close()
