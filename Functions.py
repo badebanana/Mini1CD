@@ -57,3 +57,11 @@ addToDictionary('sub',sub)
 addToDictionary('add',add)
 addToDictionary('div',div)
 addToDictionary('mul',mul)
+
+def calcula(dicionario):
+    val = []
+    for k,v in functions.items():
+        if dicionario['method'].lower() == k:
+            for i,j in dicionario['params'].items():
+                val.append(int(j))
+            print(v(val))

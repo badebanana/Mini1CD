@@ -26,12 +26,7 @@ client_connection, client_address = server_socket.accept()
 msg = client_connection.recv(1024).decode()
 dic = json.loads(msg)
 
-val = []
-for k,v in functions.items():
-    if dic['method'].lower() == k:
-        for i,j in dic['params'].items():
-            val.append(int(j))
-        print(v(val))
+val = calcula(dic)
 
 # Close client connection
 client_connection.close()
