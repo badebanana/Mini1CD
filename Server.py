@@ -31,7 +31,7 @@ for k,v in functions.items():
     if dic['method'].lower() == k:
         for i,j in dic['params'].items():
             val.append(int(j))
-            print(v(val))
+        print(v(val))
 
 # Close client connection
 client_connection.close()
