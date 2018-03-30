@@ -27,9 +27,11 @@ def add(a):
 
 def sub(a):
     x = 0
+    aux = a[0]
     if hasElements(a) == True:
-        for i in a:
-            x -= i
+        for i in a[1:]:
+            x = aux - i
+            aux = x
         return x
     else:
         return
