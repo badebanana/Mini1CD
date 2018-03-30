@@ -1,11 +1,12 @@
 functions = {}
 
-def addToDictionary(functionValue):
-    if functionValue != "" and functionValue != " ":
-        if functionValue not in functions:
-            functions[str(functionValue)] = functionValue
-        else:
-            print('Esta função já existe no array')
+def addToDictionary(fuctionKey, functionValue):
+    if fuctionKey != "" and fuctionKey != " ":
+        if functionValue != "" and functionValue != " ":
+            if fuctionKey not in functions and functionValue not in functions:
+                functions[fuctionKey] = functionValue
+            else:
+                print('Esta função já existe no array')
     else:
         print('O elemento não pode ser null')
 
@@ -23,7 +24,7 @@ def add(a):
             x += i
         return x
     else:
-        return None
+        return 'A operação não foi bem executada tente de novo!'
 
 def sub(a):
     x = 0
@@ -34,7 +35,7 @@ def sub(a):
             aux = x
         return x
     else:
-        return
+        return 'A operação não foi bem executada tente de novo!!'
 
 
 def mul(a):
@@ -44,15 +45,15 @@ def mul(a):
             x *= i
         return x
     else:
-        return
+        return 'A operação não foi bem executada tente de novo!!!'
 
 def div(a):
     if len(a) == 2:
         return a[0] / a[1]
     else:
-        print("Apenas pode dividir dois números.")
+        return 'Apenas pode dividir dois números.'
 
-addToDictionary(sub)
-addToDictionary(add)
-addToDictionary(div)
-addToDictionary(mul)
+addToDictionary('sub',sub)
+addToDictionary('add',add)
+addToDictionary('div',div)
+addToDictionary('mul',mul)
