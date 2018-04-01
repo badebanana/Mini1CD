@@ -13,6 +13,8 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Connect to server
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
+
+print('\n----------------------------- BEM-VINDO -----------------------------')
 # Send message
 while True:
     msg = msgUser()
@@ -27,7 +29,7 @@ while True:
         client_socket.close()
         break
     else:
-        print('Resposta:',dic['result'])
+        print('Resposta:',dic['result'],'\n')
 
 # Close socket
 client_socket.close()
