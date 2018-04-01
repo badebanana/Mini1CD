@@ -24,6 +24,7 @@ while True:
     if dic['result'] == 'Até à próxima':
         # Close socket
         client_socket.close()
+        break
 
 # Close socket
 client_socket.close()
