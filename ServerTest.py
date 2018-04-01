@@ -69,6 +69,8 @@ def resolv(a):
             return 'O primeiro valor não pode ser igual a zero!'
         if root < 0:
             return 'Não é possível calcular raizes negativas!'
+    else:
+        return 'Apenas poderá ter 3 valores esta função'
     result = []
     result.append((-b + math.sqrt(root)) / (2 * x))
     result.append((-b - math.sqrt(root)) / (2 * x))
@@ -102,8 +104,10 @@ def calcula(dicionario):
     for k,v in functions.items():
         if dicionario['method'].lower() == k:
             for i,j in dicionario['params'].items():
+                if j == '':
+                    break
                 val.append(int(j))
-            return (v(val))
+            return v(val)
         elif dicionario['method'].lower() == 'exit':
             return 'Até à próxima'
 

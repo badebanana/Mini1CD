@@ -1,5 +1,13 @@
+from ServerTest import*
+
 def msgUser():
-    print('\nEscreva a função no seguinte formato:    nomeFunção,valor1,valor2,...')
+    print('\n----------------------------- BEM-VINDO -----------------------------')
+    print('Para sair escreva o seguinte:  exit                                   ')
+    print('Escreva a função no seguinte formato:    nomeFunção,valor1,valor2,...')
+    val=[]
+    for k,v in functions.items():
+        val.append(k)
+    print('Funções Existente',val)
     msg = input("> ")
     array = msg.split(',')
     return array

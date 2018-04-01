@@ -21,11 +21,13 @@ while True:
 
     msgResult = client_socket.recv(1024).decode()
     dic = json.loads(msgResult)
-    print(dic['result'])
     if dic['result'] == 'Até à próxima':
+        print(dic['result'])
         # Close socket
         client_socket.close()
         break
+    else:
+        print('Resposta:',dic['result'])
 
 # Close socket
 client_socket.close()
