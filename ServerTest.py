@@ -65,6 +65,8 @@ def calcula(dicionario):
             for i,j in dicionario['params'].items():
                 val.append(int(j))
             return (v(val))
+        elif dicionario['method'].lower() == 'exit':
+            return 'Até à próxima'
 
 def fileJson(msg):
     file_json = \

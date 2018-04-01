@@ -13,13 +13,17 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
 # Send message
-msg = msgUser()
-file_json = fileJson(msg)
-client_socket.send(json.dumps(file_json).encode())
+while True:
+    msg = msgUser()
+    file_json = fileJson(msg)
+    client_socket.send(json.dumps(file_json).encode())
 
-msgResult = client_socket.recv(1024).decode()
-dic = json.loads(msgResult)
-print('\nResposta:',dic['result'])
+    msgResult = client_socket.recv(1024).decode()
+    dic = json.loads(msgResult)
+    print(dic['result'])
+    if dic['result'] == 'Até à próxima':
+        # Close socket
+        client_socket.close()
 
 # Close socket
 client_socket.close()

@@ -1,5 +1,5 @@
 def msgUser():
-    print('Escreva a função no seguinte formato:    nomeFunção,valor1,valor2,...')
+    print('\nEscreva a função no seguinte formato:    nomeFunção,valor1,valor2,...')
     msg = input("> ")
     array = msg.split(',')
     return array
@@ -18,4 +18,3 @@ def fileJson(msg):
         i += 1
     file_json['params'] = dParams
     return file_json
-

@@ -19,19 +19,23 @@ server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server_socket.bind((SERVER_HOST, SERVER_PORT))
 server_socket.listen(1)
 print('Listening on port %s ...' % SERVER_PORT)
+while True:
+    # Wait for client connections
+    client_connection, client_address = server_socket.accept()
+    while True:
+        msg = client_connection.recv(1024).decode()
+        dic = json.loads(msg)
+        val = calcula(dic)
 
-# Wait for client connections
-client_connection, client_address = server_socket.accept()
+        file_json = fileJson(val)
+        if val == 'Até à próxima':
+            client_connection.send(json.dumps(file_json).encode())
+            break
+        else:
+            client_connection.send(json.dumps(file_json).encode())
 
-msg = client_connection.recv(1024).decode()
-dic = json.loads(msg)
-
-val = calcula(dic)
-file_json = fileJson(val)
-client_connection.send(json.dumps(file_json).encode())
-
-# Close client connection
-client_connection.close()
+    # Close client connection
+    client_connection.close()
 
 # Close socket
 server_socket.close()
