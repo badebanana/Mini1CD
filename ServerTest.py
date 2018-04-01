@@ -95,6 +95,7 @@ addToDictionary('mul',mul)
 addToDictionary('resolv', resolv)
 addToDictionary('pow', pow)
 
+
 #Função que nos permite escolher uma função do dicionário saindo quando o utilizador escreve a palavra exit
 def calcula(dicionario):
     val = []
