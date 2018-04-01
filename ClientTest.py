@@ -1,7 +1,6 @@
 from ServerTest import*
 
 def msgUser():
-    print('\n----------------------------- BEM-VINDO -----------------------------')
     print('Para sair escreva o seguinte:  exit                                   ')
     print('Escreva a função no seguinte formato:    nomeFunção,valor1,valor2,...')
     val=[]
