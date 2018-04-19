@@ -13,7 +13,6 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Connect to server
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
-
 print('\n----------------------------- BEM-VINDO -----------------------------')
 # Send message
 while True:
