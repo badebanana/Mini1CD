@@ -20,21 +20,32 @@ server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server_socket.bind((SERVER_HOST, SERVER_PORT))
 server_socket.listen(1)
 print('Listening on port %s ...' % SERVER_PORT)
-while True:
-    # Wait for client connections
-    client_connection, client_address = server_socket.accept()
+
+def exit(val, file_json):
+    if val == 'Até à próxima':
+        client_connection.send(json.dumps(file_json).encode())
+        return True
+    else:
+        client_connection.send(json.dumps(file_json).encode())
+        return False
+
+def resposta():
     while True:
         msg = client_connection.recv(1024).decode()
         dic = json.loads(msg)
         val = calcula(dic)
 
         file_json = fileJson(val)
-        if val == 'Até à próxima':
-            client_connection.send(json.dumps(file_json).encode())
+        bool = exit(val, file_json)
+        if bool:
             break
-        else:
-            client_connection.send(json.dumps(file_json).encode())
 
+#Execução do Programa por parte do Server
+while True:
+    # Wait for client connections
+    client_connection, client_address = server_socket.accept()
+    # Calculo da função recebida pelo utilizador
+    resposta()
     # Close client connection
     client_connection.close()
 

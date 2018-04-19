@@ -1,16 +1,16 @@
-from ServerTest import*
+from Functions import*
 
+#Função que mostra o menu inicial e retorna a mensagem recebida pelo utilizador
 def msgUser():
     print('Para sair escreva o seguinte:  exit                                   ')
     print('Escreva a função no seguinte formato:    nomeFunção,valor1,valor2,...')
-    val=[]
-    for k,v in functions.items():
-        val.append(k)
+    val = arrayFuncoes()
     print('Funções Existente',val)
     msg = input("> ")
     array = msg.split(',')
     return array
 
+#Função que tranforma a mensagem recebida num RPC-Json
 def fileJson(msg):
     file_json = \
         {

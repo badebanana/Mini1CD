@@ -13,8 +13,18 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Connect to server
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
+def exit(result):
+    if result['result'] == 'Até à próxima':
+        print(dic['result'])
+        # Close socket
+        client_socket.close()
+        return True
+    else:
+        print('Resposta:',dic['result'],'\n')
+        return False
+
+#Execução do Programa por parte do Client
 print('\n----------------------------- BEM-VINDO -----------------------------')
-# Send message
 while True:
     msg = msgUser()
     file_json = fileJson(msg)
@@ -22,13 +32,9 @@ while True:
 
     msgResult = client_socket.recv(1024).decode()
     dic = json.loads(msgResult)
-    if dic['result'] == 'Até à próxima':
-        print(dic['result'])
-        # Close socket
-        client_socket.close()
+    bool = exit(dic)
+    if bool:
         break
-    else:
-        print('Resposta:',dic['result'],'\n')
 
 # Close socket
 client_socket.close()
